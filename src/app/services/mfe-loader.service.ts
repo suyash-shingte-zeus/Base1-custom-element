@@ -20,9 +20,13 @@ export class MfeLoaderService {
       module = cachedMoule;
       console.log("load mfe from cache", module)
     } else {
-      module = await loadRemoteModule(loadRemoteEntryOptions);
-      this.mfeMap.set(loadRemoteEntryOptions.remoteName + loadRemoteEntryOptions.exposedModule, module)
-      console.log("load mfe from remote", module)
+      try{
+        module = await loadRemoteModule(loadRemoteEntryOptions);
+        this.mfeMap.set(loadRemoteEntryOptions.remoteName + loadRemoteEntryOptions.exposedModule, module)
+        console.log("load mfe from remote", module)
+      }catch(e){
+        console.log(e);
+      }
     }
     this.ngZone.runOutsideAngular(() => {
       module.default();

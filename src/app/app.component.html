@@ -1,1 +1,12 @@
+<!-- app.component.html -->
+<div class="header">
+<nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Player</a>
+    <a routerLink="/word-card" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Word Card Deck</a>
+    <a routerLink="/flash-card" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Flash Card Deck</a>
+</nav>
+</div>
+<div class="content">
 <router-outlet></router-outlet>
+</div>
+  

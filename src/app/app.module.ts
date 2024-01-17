@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { MfeContentModule } from './mfe-content/mfe-content.module';
 import { MfeLoaderComponent } from './mfe-content/mfe-loader/mfe-loader.component';
 import { MfeLoaderService } from './services/mfe-loader.service';
+import { WordCardDeckMfeWrapperModule } from './word-card-deck-mfe-wrapper/word-card-deck-mfe-wrapper.module';
+import { FlashCardDeckMfeWrapperModule } from './flash-card-deck-mfe-wrapper/flash-card-deck-mfe-wrapper.module';
+import { PlayerModule } from './player/player.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { MfeLoaderService } from './services/mfe-loader.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MfeContentModule
+    MfeContentModule,
+    WordCardDeckMfeWrapperModule,
+    FlashCardDeckMfeWrapperModule,
+    PlayerModule
   ],
   providers: [
     MfeLoaderService,
